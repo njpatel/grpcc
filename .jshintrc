@@ -1,0 +1,14 @@
+{
+  "node": true,
+  "esnext": true,
+  "camelcase": true,
+  "indent": 2,
+  "eqeqeq": true,
+  "latedef": true,
+  "strict": true,
+  "undef": true,
+  "unused": true,
+  "eqnull": true,
+  "mocha": true,
+  "latedef": false
+}
