@@ -1,0 +1,12 @@
+machine:
+  node:
+    version: 4.2.2
+
+dependencies:
+  override:
+    - npm install --dev
+
+test:
+  override:
+    - nvm use 4.2.2 && npm test
+    - nvm use 5.1.0 && npm test

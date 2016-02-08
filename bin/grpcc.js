@@ -25,4 +25,9 @@ if (!program.address || program.address.indexOf(':') < 0) {
 	program.help();
 }
 
-grpcc(program.proto, program.service, program.address, { insecure: program.insecure });
+try {
+  grpcc(program.proto, program.service, program.address, { insecure: program.insecure });
+} catch (e) {
+  console.error(e);
+  process.exit(1);
+}
