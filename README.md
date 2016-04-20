@@ -8,17 +8,17 @@ This is an example of using `grpcc` with the [Skizze](https://github.com/skizzeh
 
 
 ### Features
- * Easy to create flexible connections to gRPC services for testing
- * Supports auto-reconnect via the standard gRPC backoff-retries
- * In-built, simple to use, `printReply` function for handling service replies
- * Use Javascript objects to mimic protobuf `Message` objects
- 
+* Easy to create flexible connections to gRPC services for testing
+* Supports auto-reconnect via the standard gRPC backoff-retries
+* In-built, simple to use, `printReply` function for handling service replies
+* Use Javascript objects to mimic protobuf `Message` objects
+
 
 ### Installation
 
 `npm install -g grpcc`
- 
- 
+
+
 ### Getting Started
 
 `grpcc` is meant to be used as a quick way to connect to gRPC services to easily execute remote methods. I use it primarily during development, as it allows me to not have to worry about writing client bindings while I'm experiementing with service API.
@@ -33,9 +33,9 @@ By default, `grpcc` will attempt to make a secure connection to the service. If 
 
 Once `grpcc` has connected, it will print out usage instructions for the configured service. It does this by reading the parsed values from the protobuf file. After printing the instructions, it will start a nodejs REPL with the following globals available:
 
- * `client` - this is the gRPC client connection to your service. The usage instructions will show the available mehtods, as will using tab completion by typing `client.<tab>`
- * `printReply` - this is a convenience callback for printing the response of an RPC call (nicer than `console.log`)
- * `pr` - this is an alias for `printReply`
+* `client` - this is the gRPC client connection to your service. The usage instructions will show the available mehtods, as will using tab completion by typing `client.<tab>`
+* `printReply` - this is a convenience callback for printing the response of an RPC call (nicer than `console.log`)
+* `pr` - this is an alias for `printReply`
 
 The REPL environment is using `--harmony` and detects methods that should have `use strict`, so feel free to use the es6 features that nodejs supports.
 
@@ -43,11 +43,11 @@ The REPL environment is using `--harmony` and detects methods that should have `
 
 Depending on whether your method is a simple call or a streaming call, you'll have to do different things:
 
- * All calls require an argument matching the spec, so if you have an empty message type in your proto for some calls, you'll be sending in `{}` as the first argument to those calls
- * Remember that Protobuf.js will camelCase class and property names
- * Simple calls can take a callback as the second argument which has the signature `function(err, reply)`. `reply` will be an object matching the message type as per your proto
- * For streaming calls, you'll want to use the `EventEmitter` object that is returned when the call is made and connect to the appropriate events
- 
+* All calls require an argument matching the spec, so if you have an empty message type in your proto for some calls, you'll be sending in `{}` as the first argument to those calls
+* Remember that Protobuf.js will camelCase class and property names
+* Simple calls can take a callback as the second argument which has the signature `function(err, reply)`. `reply` will be an object matching the message type as per your proto
+* For streaming calls, you'll want to use the `EventEmitter` object that is returned when the call is made and connect to the appropriate events
+
 [The official nodejs gRPC docs](http://www.grpc.io/docs/tutorials/basic/node.html) cover how to use these features very well.
 
 
@@ -68,17 +68,31 @@ Depending on whether your method is a simple call or a streaming call, you'll ha
 ```
 
 
+
+### Versions
+
+#### 0.0.2
+
+- Fix bug where proto files without a `service` declaration wouldn't load [#4](https://github.com/njpatel/grpcc/issues/4)
+
+#### 0.0.1
+
+- Initial Release
+
+
+
 ### Todo
- - [ ] Intercept more known error messages from gRPC bindings and pretty-print them
- - [ ] REPL history between sessions
- - [ ] Nicer API for streaming (all types), e.g. a function wrapper that listens to the events and pretty prints
- - [ ] Easily reload the client (when proto changes)
+
+- [ ] Intercept more known error messages from gRPC bindings and pretty-print them
+- [ ] REPL history between sessions
+- [ ] Nicer API for streaming (all types), e.g. a function wrapper that listens to the events and pretty prints
+- [ ] Easily reload the client (when proto changes)
 
 
 ### License
 
 MIT
-  
+
 
 ### Contact
 
