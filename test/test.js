@@ -23,4 +23,9 @@ describe('grpcc', () => {
     let fn = grpcc.bind(null, './test/test.proto', undefined, ':8080');
     expect(fn).to.not.throw(/unable to locate/i);
   });
+
+  it('should support missing service name', () => {
+    let fn = grpcc.bind(null, './test/noservice.proto', undefined, ':8080');
+    expect(fn).to.not.throw(/unable to locate/i);
+  });
 });

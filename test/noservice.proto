@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+service TestNoService {
+  rpc SayHello(SayRequest) returns (SayReply) {}
+}
+
+message SayRequest {
+  required string sayWhat = 1;
+}
+
+message SayReply {
+  required string saidWhat = 1;
+}
