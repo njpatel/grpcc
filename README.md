@@ -61,6 +61,7 @@ Depending on whether your method is a simple call or a streaming call, you'll ha
     -h, --help                 output usage information
     -V, --version              output the version number
     -p, --proto <path>         path to a protobuf file describing the service (required)
+    -d, --directory <path>     path to a protobuf file directory (optional, default as command running directory)
     -a, --address <host:port>  the address of the service to connect to (required)
     -s, --service <name>       the name of the service to connect to (optional)
     -i, --insecure             use an insecure connection (default=false)

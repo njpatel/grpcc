@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/njpatel/grpcc.git"
+    "url": "git+https://github.com/njpatel/grpcc.git"
   },
   "keywords": [
     "grpc",
@@ -17,7 +17,11 @@
     "proto",
     "http2"
   ],
-  "author": "Neil Jagdish Patel <njpatel@gmail.com> (https://njp.io)",
+  "author": {
+    "name": "Neil Jagdish Patel",
+    "email": "njpatel@gmail.com",
+    "url": "https://njp.io"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/njpatel/grpcc/issues"
@@ -26,7 +30,8 @@
   "dependencies": {
     "colors": "^1.1.2",
     "commander": "^2.9.0",
-    "grpc": "^0.12.0"
+    "grpc": "^0.12.0",
+    "inquirer": "^1.0.2"
   },
   "bin": {
     "grpcc": "./bin/grpcc.js"
@@ -34,5 +39,32 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^2.4.5"
-  }
+  },
+  "gitHead": "4ef52e9e9f1554e841fac77befd671e9472697ac",
+  "_id": "grpcc@0.0.1",
+  "_shasum": "16b3c1b0bbf62e89ea01c92e8e044a75200c27f6",
+  "_from": "grpcc@*",
+  "_npmVersion": "2.14.12",
+  "_nodeVersion": "4.2.6",
+  "_npmUser": {
+    "name": "njpatel",
+    "email": "njpatel@gmail.com"
+  },
+  "dist": {
+    "shasum": "16b3c1b0bbf62e89ea01c92e8e044a75200c27f6",
+    "tarball": "https://registry.npmjs.org/grpcc/-/grpcc-0.0.1.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "njpatel",
+      "email": "njpatel@gmail.com"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-9-west.internal.npmjs.com",
+    "tmp": "tmp/grpcc-0.0.1.tgz_1454975767622_0.20959731633774936"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/grpcc/-/grpcc-0.0.1.tgz",
+  "readme": "ERROR: No README data found!"
 }
