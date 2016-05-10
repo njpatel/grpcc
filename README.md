@@ -72,6 +72,10 @@ Depending on whether your method is a simple call or a streaming call, you'll ha
 
 ### Versions
 
+#### 0.0.3
+
+- Support multiple packages & loading of multiple protobufs (thank you @chakming)
+
 #### 0.0.2
 
 - Fix bug where proto files without a `service` declaration wouldn't load [#4](https://github.com/njpatel/grpcc/issues/4)
