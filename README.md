@@ -72,6 +72,12 @@ Depending on whether your method is a simple call or a streaming call, you'll ha
 
 ### Versions
 
+#### 0.0.5
+- Update to grpc v1.0
+
+#### 0.0.4
+- 🙃
+
 #### 0.0.3
 
 - Support multiple packages & loading of multiple protobufs (thank you @chakming)

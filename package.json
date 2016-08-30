@@ -1,6 +1,6 @@
 {
   "name": "grpcc",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "A gRPC cli interface for easy testing against gRPC servers",
   "main": "./lib/index.js",
   "scripts": {
@@ -65,6 +65,6 @@
     "tmp": "tmp/grpcc-0.0.1.tgz_1454975767622_0.20959731633774936"
   },
   "directories": {},
-  "_resolved": "https://registry.npmjs.org/grpcc/-/grpcc-0.0.1.tgz",
-  "readme": "ERROR: No README data found!"
+  "_resolved": "https://registry.npmjs.org/grpcc/-/grpcc-0.0.5.tgz",
+  "readme": "README.md"
 }
