@@ -7,7 +7,7 @@ let program = require('commander');
 let grpcc = require('../lib');
 
 program
-  .version("0.0.1")
+  .version("0.0.5")
   .option('-p, --proto <path>', 'path to a protobuf file describing the service (required)')
   .option('-d, --directory <path>', 'path to a protobuf file directory')
   .option('-a, --address <host:port>', 'the address of the service to connect to (required)')
