@@ -72,6 +72,11 @@ Depending on whether your method is a simple call or a streaming call, you'll ha
 
 ### Versions
 
+#### 0.0.6
+- Fix version mismatch (thanks @ehudc)
+- Fix UnhandledPromiseRejectionWarning (thanks @jfyne)
+- Fix handling dot-delimited packabes (thanks @rodrigosetti)
+
 #### 0.0.5
 - Update to grpc v1.0
 
