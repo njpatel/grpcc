@@ -9,7 +9,7 @@ describe('grpcc', () => {
     expect(grpcc.bind(null, '/path/to/nowhere')).to.throw(/read property/);
   });
 
-  // TODO: update/remove, temporary won't throw exception as it wait before 
+  // TODO: update/remove, temporary won't throw exception as it wait before
   // it('should throw if non-existing service name', () => {
   //   let fn = grpcc.bind(null, './test/test.proto', undefined, 'MyService');
   //   expect(fn).to.throw(/unable to locate/i);
@@ -22,6 +22,11 @@ describe('grpcc', () => {
 
   it('should find default service name', () => {
     let fn = grpcc.bind(null, './test/test.proto', undefined, undefined, ':8080');
+    expect(fn).to.not.throw(/unable to locate/i);
+  });
+
+  it('should find nested service name', () => {
+    let fn = grpcc.bind(null, './test/nestedtest.proto', undefined, undefined, ':8080');
     expect(fn).to.not.throw(/unable to locate/i);
   });
 
