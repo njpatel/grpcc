@@ -13,6 +13,9 @@ program
   .option('-a, --address <host:port>', 'the address of the service to connect to (required)')
   .option('-s, --service <name>', 'the name of the service to connect to (optional)')
   .option('-i, --insecure', 'use an insecure connection (default=false)', false)
+  .option('--root_cert <path>', 'specify root certificate path for secure connections (optional)')
+  .option('--private_key <path>', 'specify private key path for secure connections (optional)')
+  .option('--cert_chain <path>', 'specify certificate chain path for secure connections (optional)')
   .parse(process.argv);
 
 
@@ -28,7 +31,10 @@ if (!program.address || program.address.indexOf(':') < 0) {
 
 try {
   grpcc(program.proto, program.directory, program.service, program.address, {
-    insecure: program.insecure
+    insecure: program.insecure,
+    rootCert: program.root_cert,
+    privateKey: program.private_key,
+    certChain: program.cert_chain,
   });
 } catch (e) {
   console.error(e);
