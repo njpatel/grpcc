@@ -1,6 +1,6 @@
 {
   "name": "grpcc",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "A gRPC cli interface for easy testing against gRPC servers",
   "main": "./lib/index.js",
   "scripts": {
@@ -30,7 +30,7 @@
   "dependencies": {
     "colors": "^1.1.2",
     "commander": "^2.9.0",
-    "grpc": "^1.0.0",
+    "grpc": ">=1.4.1",
     "inquirer": "^1.0.2"
   },
   "bin": {

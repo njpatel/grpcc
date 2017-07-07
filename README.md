@@ -72,6 +72,12 @@ Depending on whether your method is a simple call or a streaming call, you'll ha
 
 ### Versions
 
+#### 0.0.8
+- Force min `grpc` version of `1.4.1` [#21](https://github.com/njpatel/grpcc/issues/21)
+
+#### 0.0.7
+- Let's not talk about this.
+
 #### 0.0.6
 - Fix version mismatch (thanks @ehudc)
 - Fix UnhandledPromiseRejectionWarning (thanks @jfyne)
