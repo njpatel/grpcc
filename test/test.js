@@ -6,7 +6,7 @@ let grpcc = require('../lib');
 
 describe('grpcc', () => {
   it('should throw to parse non-existant proto file', () => {
-    expect(grpcc.bind(null, '/path/to/nowhere')).to.throw(/read property/);
+    expect(grpcc.bind(null, '/path/to/nowhere', undefined, undefined, ':8080')).to.throw(/read property/);
   });
 
   // TODO: update/remove, temporary won't throw exception as it wait before
@@ -26,6 +26,11 @@ describe('grpcc', () => {
   });
 
   it('should find nested service name', () => {
+    let fn = grpcc.bind(null, './test/noservicenested.proto', undefined, undefined, ':8080');
+    expect(fn).to.throw(/unable to locate/i);
+  });
+
+  it('should throw if no service can be found (nested proto)', () => {
     let fn = grpcc.bind(null, './test/nestedtest.proto', undefined, undefined, ':8080');
     expect(fn).to.not.throw(/unable to locate/i);
   });
