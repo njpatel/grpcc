@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package grpcctest.nest;
+
+message SayRequest {
+  required string sayWhat = 1;
+}
+
+message SayReply {
+  required string saidWhat = 1;
+}
