@@ -1,6 +1,6 @@
 # grpcc [![Circle CI](https://circleci.com/gh/njpatel/grpcc.svg?style=svg)](https://circleci.com/gh/njpatel/grpcc)
 
-`grpcc` is a flexible command-line client for any gRPC server for quick and easy testing of APIs. `grpcc` is writtern in nodejs but can talk to a gRPC service written in any language.
+`grpcc` is a flexible command-line client for any gRPC server for quick and easy testing of APIs. `grpcc` is written in nodejs but can talk to a gRPC service written in any language.
 
 This is an example of using `grpcc` with the [Skizze](https://github.com/skizzehq/skizze) database's gPRC `.proto` file:
 
