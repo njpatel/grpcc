@@ -2,7 +2,7 @@ syntax = "proto2";
 
 package grpcctest.nest;
 
-service TestService {
+service TestNestedService {
   rpc SayHello(SayRequest) returns (SayReply) {}
 }
 

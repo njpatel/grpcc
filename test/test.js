@@ -42,7 +42,7 @@ describe('grpcc', () => {
     expect(fn).to.not.throw(/unable to locate/i);
   });
 
-  it('should find no service', () => {
+  it('should cleanly exit on no service', () => {
     let args = {
       proto: './test/noservicenested.proto',
       address: ':8080',
@@ -50,7 +50,7 @@ describe('grpcc', () => {
     };
 
     let fn = grpcc.bind(null, args, {});
-    expect(fn).to.throw(/unable to locate/i);
+    expect(fn).to.not.throw(/unable to locate/i);
   });
 
   it('should find service name in nested package', () => {
@@ -73,5 +73,27 @@ describe('grpcc', () => {
 
     let fn = grpcc.bind(null, args, {});
     expect(fn).to.not.throw(/unable to locate/i);
+  });
+
+  it('should fail if non existant exec script is loaded', () => {
+    let args = {
+      proto: './test/nopackage.proto',
+      address: ':8080',
+      exec: './no/such/file',
+    };
+
+    let fn = grpcc.bind(null, args, {});
+    expect(fn).to.throw(/no such file/i);
+  });
+
+  it('should fail if bad exec script is loaded', () => {
+    let args = {
+      proto: './test/nopackage.proto',
+      address: ':8080',
+      exec: './test/badexec/badexec.js',
+    };
+
+    let fn = grpcc.bind(null, args, {});
+    expect(fn).to.throw(/unexpected identifier/i);
   });
 });
