@@ -9,8 +9,10 @@ describe('grpcc', () => {
     let args = {
       proto: '/path/to/nowhere',
       address: ':8080',
+      eval: '1',
     };
-    expect(grpcc.bind(null, args)).to.throw(/read property/);
+    let fn = grpcc.bind(null, args, {});
+    expect(fn).to.throw(/property/);
   });
 
   // TODO: update/remove, temporary won't throw exception as it wait before
@@ -23,8 +25,9 @@ describe('grpcc', () => {
     let args = {
       proto: './test/test.proto',
       service: 'TestService',
+      eval: '1',
     };
-    let fn = grpcc.bind(null, args);
+    let fn = grpcc.bind(null, args, {});
     expect(fn).to.throw(/address should be valid/i);
   });
 
@@ -32,39 +35,43 @@ describe('grpcc', () => {
     let args = {
       proto: './test/test.proto',
       address: ':8080',
+      eval: '1',
     };
 
-    let fn = grpcc.bind(null, args);
+    let fn = grpcc.bind(null, args, {});
     expect(fn).to.not.throw(/unable to locate/i);
   });
 
-  it('should find nested service name', () => {
+  it('should find no service', () => {
     let args = {
       proto: './test/noservicenested.proto',
       address: ':8080',
+      eval: '1',
     };
 
-    let fn = grpcc.bind(null, args);
+    let fn = grpcc.bind(null, args, {});
     expect(fn).to.throw(/unable to locate/i);
   });
 
-  it('should throw if no service can be found (nested proto)', () => {
+  it('should find service name in nested package', () => {
     let args = {
       proto: './test/nestedtest.proto',
       address: ':8080',
+      eval: '1',
     };
 
-    let fn = grpcc.bind(null, args);
+    let fn = grpcc.bind(null, args, {});
     expect(fn).to.not.throw(/unable to locate/i);
   });
 
-  it('should support missing service name', () => {
+  it('should support missing package name', () => {
     let args = {
-      proto: './test/noservice.proto',
+      proto: './test/nopackage.proto',
       address: ':8080',
+      eval: '1',
     };
 
-    let fn = grpcc.bind(null, args);
+    let fn = grpcc.bind(null, args, {});
     expect(fn).to.not.throw(/unable to locate/i);
   });
 });
