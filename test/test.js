@@ -6,7 +6,11 @@ let grpcc = require('../lib');
 
 describe('grpcc', () => {
   it('should throw to parse non-existant proto file', () => {
-    expect(grpcc.bind(null, '/path/to/nowhere', undefined, undefined, ':8080')).to.throw(/read property/);
+    let args = {
+      proto: '/path/to/nowhere',
+      address: ':8080',
+    };
+    expect(grpcc.bind(null, args)).to.throw(/read property/);
   });
 
   // TODO: update/remove, temporary won't throw exception as it wait before
@@ -16,27 +20,51 @@ describe('grpcc', () => {
   // });
 
   it('should throw if address is not provided', () => {
-    let fn = grpcc.bind(null, './test/test.proto', undefined, 'TestService');
+    let args = {
+      proto: './test/test.proto',
+      service: 'TestService',
+    };
+    let fn = grpcc.bind(null, args);
     expect(fn).to.throw(/address should be valid/i);
   });
 
   it('should find default service name', () => {
-    let fn = grpcc.bind(null, './test/test.proto', undefined, undefined, ':8080');
+    let args = {
+      proto: './test/test.proto',
+      address: ':8080',
+    };
+
+    let fn = grpcc.bind(null, args);
     expect(fn).to.not.throw(/unable to locate/i);
   });
 
   it('should find nested service name', () => {
-    let fn = grpcc.bind(null, './test/noservicenested.proto', undefined, undefined, ':8080');
+    let args = {
+      proto: './test/noservicenested.proto',
+      address: ':8080',
+    };
+
+    let fn = grpcc.bind(null, args);
     expect(fn).to.throw(/unable to locate/i);
   });
 
   it('should throw if no service can be found (nested proto)', () => {
-    let fn = grpcc.bind(null, './test/nestedtest.proto', undefined, undefined, ':8080');
+    let args = {
+      proto: './test/nestedtest.proto',
+      address: ':8080',
+    };
+
+    let fn = grpcc.bind(null, args);
     expect(fn).to.not.throw(/unable to locate/i);
   });
 
   it('should support missing service name', () => {
-    let fn = grpcc.bind(null, './test/noservice.proto', undefined, undefined, ':8080');
+    let args = {
+      proto: './test/noservice.proto',
+      address: ':8080',
+    };
+
+    let fn = grpcc.bind(null, args);
     expect(fn).to.not.throw(/unable to locate/i);
   });
 });
