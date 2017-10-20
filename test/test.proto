@@ -2,12 +2,22 @@ syntax = "proto2";
 
 package grpcctest;
 
+enum EventType {
+  EVENT_TYPE_TEST = 0;
+  EVENT_TYPE_TEST_AGAIN = 1;
+}
+
 service TestService {
   rpc SayHello(SayRequest) returns (SayReply) {}
 }
 
 message SayRequest {
   required string sayWhat = 1;
+  enum SayWhen {
+    SAY_NOW = 1;
+    SAY_LATER = 2;
+  }
+  SayWhen when = 2;
 }
 
 message SayReply {
