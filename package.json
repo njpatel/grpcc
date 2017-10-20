@@ -1,6 +1,6 @@
 {
   "name": "grpcc",
-  "version": "0.0.8",
+  "version": "1.0.0",
   "description": "A gRPC cli interface for easy testing against gRPC servers",
   "main": "./lib/index.js",
   "scripts": {
