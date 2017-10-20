@@ -1,4 +1,4 @@
-syntax = "proto2";
+syntax = "proto3";
 
 package grpcctest;
 
@@ -9,6 +9,9 @@ enum EventType {
 
 service TestService {
   rpc SayHello(SayRequest) returns (SayReply) {}
+  rpc SayClientStream(stream SayRequest) returns (SayReply) {}
+  rpc SayServerStream(stream SayRequest) returns (stream SayReply) {}
+  rpc SayBidirectionalStream(stream SayRequest) returns (stream SayReply) {}
 }
 
 message SayRequest {
