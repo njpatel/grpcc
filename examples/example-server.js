@@ -1,5 +1,5 @@
 let grpc = require('grpc');
-let proto = grpc.load(__dirname+"/test.proto");
+let proto = grpc.load(__dirname+"/../test/test.proto");
 let grpcctest = proto.grpcctest;
 
 let server = new grpc.Server();

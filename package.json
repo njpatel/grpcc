@@ -4,7 +4,8 @@
   "description": "A gRPC cli interface for easy testing against gRPC servers",
   "main": "./lib/index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "example-server": "node ./examples/example-server.js"
   },
   "repository": {
     "type": "git",
