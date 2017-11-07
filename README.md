@@ -147,12 +147,7 @@ You can see the server's output in the other terminal. The unary example also sh
 
 ### Todo
 
-- [ ] Allow a ~/.grpcc.conf which details connections to avoid requiring remembering the args
-- [ ] Intercept more known error messages from gRPC bindings and pretty-print them
-- [ ] REPL history between sessions
-- [ ] Nicer API for streaming (all types), e.g. a function wrapper that listens to the events and pretty prints
-- [ ] Easily reload the client (when proto changes)
-- [ ] UI? 🙃
+Check out the [project](https://github.com/njpatel/grpcc/projects)
 
 
 ### License
