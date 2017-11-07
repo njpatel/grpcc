@@ -39,7 +39,7 @@ By default, `grpcc` will attempt to make a secure connection to the service. If 
 
 Once `grpcc` has connected, it will print out usage instructions for the configured service. It does this by reading the parsed values from the protobuf file. After printing the instructions, it will start a nodejs REPL with the following globals available:
 
-* `client` - this is the gRPC client connection to your service. The usage instructions will show the available mehtods, as will using tab completion by typing `client.<tab>`
+* `client` - this is the gRPC client connection to your service. The usage instructions will show the available methods, as will using tab completion by typing `client.<tab>`
 * `printReply` - a convenience callback for printing the response of an RPC call (nicer than `console.log`) (alias: `pr`)
 * `streamReply` - a convenience callback for printing the response of an stream's `'data'` event (nicer than `console.log`) (alias: `cr`)
 * `createMetadata` - a convenience function for converting plain javascript objects to gRPC metadata (alias: `cm`)
