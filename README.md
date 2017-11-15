@@ -20,6 +20,7 @@ This is an example of using `grpcc` with the [Skizze](https://github.com/skizzeh
 * **eval** support allows using grpcc like curl, fire off a request and have JSON printed to the console
 * **exec** support allows executing pre-existing scripts with results being outputted to stdout
 * Connect with ssl, custom ssl certs, or insecurely
+* Socket connection support via `--address "unix:/path/to/sockfile`
 
 
 ### Installation
@@ -147,7 +148,7 @@ You can see the server's output in the other terminal. The unary example also sh
 
 ### Todo
 
-Check out the [project](https://github.com/njpatel/grpcc/projects)
+Check out the [project](https://github.com/njpatel/grpcc/projects/1)
 
 
 ### License
