@@ -14,7 +14,9 @@ This is an example of using `grpcc` with the [Skizze](https://github.com/skizzeh
 * In-built, simple to use pretty-printing callbacks:
   * `printReply` to print unary method call replies
   * `streamReply` to print stream `call.on('data'...` replies
+  * `printMetadata` to parse and print metadata using `call.on('metadata', pm)`
 * Support for adding gRPC metadata via `createMetadata`
+* Parsing of error-metadata to json
 * Full support for streams (client, server, and bi-directional)
 * Flexibilty of a full nodejs environment that can be as simple or complex as required
 * **eval** support allows using grpcc like curl, fire off a request and have JSON printed to the console
@@ -44,6 +46,7 @@ Once `grpcc` has connected, it will print out usage instructions for the configu
 * `printReply` - a convenience callback for printing the response of an RPC call (nicer than `console.log`) (alias: `pr`)
 * `streamReply` - a convenience callback for printing the response of an stream's `'data'` event (nicer than `console.log`) (alias: `cr`)
 * `createMetadata` - a convenience function for converting plain javascript objects to gRPC metadata (alias: `cm`)
+* `printMetadata` - a convenience callback for printing the metadata of an RPC call (nicer than `console.log`) (alias: `pm`)
 
 
 The REPL environment uses node's [`repl`](https://nodejs.org/api/repl.html) module, so feel free to use any of the in-built features such as save/restore history etc.
