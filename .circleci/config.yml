@@ -6,4 +6,5 @@ jobs:
         version: 4.2.2
     steps:
       - checkout
+      - run: npm install --dev
       - run: npm test
