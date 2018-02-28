@@ -4,3 +4,6 @@ jobs:
     machine:
       node:
         version: 4.2.2
+    steps:
+      - checkout
+      - run: npm test
