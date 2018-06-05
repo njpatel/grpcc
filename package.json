@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/njpatel/grpcc",
   "dependencies": {
+    "@grpc/proto-loader": "^0.1.0",
     "colors": "^1.1.2",
     "commander": "^2.9.0",
     "eval": "^0.1.2",
