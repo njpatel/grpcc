@@ -18,7 +18,7 @@ This is an example of using `grpcc` with the [Skizze](https://github.com/skizzeh
 * Support for adding gRPC metadata via `createMetadata`
 * Parsing of error-metadata to json
 * Full support for streams (client, server, and bi-directional)
-* Flexibilty of a full nodejs environment that can be as simple or complex as required
+* Flexibility of a full nodejs environment that can be as simple or complex as required
 * **eval** support allows using grpcc like curl, fire off a request and have JSON printed to the console
 * **exec** support allows executing pre-existing scripts with results being outputted to stdout
 * Connect with ssl, custom ssl certs, or insecurely

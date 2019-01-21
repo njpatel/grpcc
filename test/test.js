@@ -5,7 +5,7 @@ let expect = require('chai').expect;
 let grpcc = require('../lib');
 
 describe('grpcc', () => {
-  it('should throw to parse non-existant proto file', () => {
+  it('should throw to parse non-existent proto file', () => {
     let args = {
       proto: '/path/to/nowhere',
       address: ':8080',
@@ -75,7 +75,7 @@ describe('grpcc', () => {
     expect(fn).to.not.throw(/unable to locate/i);
   });
 
-  it('should fail if non existant exec script is loaded', () => {
+  it('should fail if non existent exec script is loaded', () => {
     let args = {
       proto: './test/nopackage.proto',
       address: ':8080',
