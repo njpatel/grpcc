@@ -12,7 +12,7 @@ describe('grpcc', () => {
       eval: '1',
     };
     let fn = grpcc.bind(null, args, {});
-    expect(fn).to.throw(/property/);
+    expect(fn).to.throw(/does not exist/);
   });
 
   // TODO: update/remove, temporary won't throw exception as it wait before

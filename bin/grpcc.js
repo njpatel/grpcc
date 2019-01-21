@@ -1,10 +1,8 @@
 #!/usr/bin/env node
 
-'use strict';
+const program = require('commander');
 
-let program = require('commander');
-
-let grpcc = require('../lib');
+const grpcc = require('../lib');
 
 program
   .version(require('../package.json').version)
@@ -39,6 +37,6 @@ try {
     certChain: program.cert_chain,
   });
 } catch (e) {
-  console.error(e);
+  console.error(JSON.stringify(e));
   process.exit(1);
 }
