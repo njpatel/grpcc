@@ -67,7 +67,7 @@ The `--eval` and `--exec` options allow running scripts against gRPC servers wit
 
 **--eval**
 ```
- $ grpc -i -p foo.proto -a localhost:9090 --eval 'client.getPerson({ id: 1 }, printReply)'
+ $ grpcc -i -p foo.proto -a localhost:9090 --eval 'client.getPerson({ id: 1 }, printReply)'
  {
    "name": "Neil Jagdish Patel",
    "location": "London",
@@ -89,7 +89,7 @@ let id = setInterval(() => {
   call.write({ data: i });
 }, 100);
 
-$ grpc -i -p foo.proto -a localhost:9090 --exec myscript.js
+$ grpcc -i -p foo.proto -a localhost:9090 --exec myscript.js
 {
   "sum": 15
 }
